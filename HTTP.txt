@@ -1,0 +1,24 @@
+HTTP --> A client-server protocol and an application layer sent over TCP
+it is the foundation of any data exchange on the web.
+
+
+clients and servers communicate by exchanging individual messages
+client ---send---> messages(requests)
+server ---send---> message(responses)
+
+
+
+user agent = web browser
+
+client   |proxies|(perform different operations)    server(serves the document as requested by the client)
+
+server ---> one server
+multiple servers sharing the load(load balancing)
+
+
+browser(always the entity initiating the request)    |routers, modems, etc.|        server
+
+
+proxies numerous functions:
+caching(public or private), filtering(ex. antivirus scan or parental controls), load balancing, authentication(control acess to different resources), logging.
+
