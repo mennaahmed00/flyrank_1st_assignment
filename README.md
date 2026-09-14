@@ -1,13 +1,13 @@
-This is a a file that contains 4 HTTP REQUESTS 
-GET, POST,PUT and DELETE
+This repo contains a folder Assignment_1 which contains main.py file that has 4 HTTP REQUESTS <br>
+GET, POST,PUT and DELETE <br><br>
 
-how to run this file
-cd ASSignment_1/main.py
-uv run fastapi dev
-you'll get a link like this one 
-<img width="236" height="17" alt="image" src="https://github.com/user-attachments/assets/9416b3f5-3570-48aa-a03b-8ca6682161e9" />
+how to run this file?
+-cd Assignment_1/main.py<br>
+-uv run fastapi dev<br>
+you'll get a link like this one <br>
+<img width="236" height="17" alt="image" src="https://github.com/user-attachments/assets/9416b3f5-3570-48aa-a03b-8ca6682161e9" /> <br>
 
-click and that's it!
+click and that's it! <br><br>
 
 
 
