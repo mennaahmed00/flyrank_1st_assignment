@@ -1,3 +1,23 @@
+This is a a file that contains 4 HTTP REQUESTS 
+GET, POST,PUT and DELETE
+
+how to run this file
+cd ASSignment_1/main.py
+uv run fastapi dev
+you'll get a link like this one 
+<img width="236" height="17" alt="image" src="https://github.com/user-attachments/assets/9416b3f5-3570-48aa-a03b-8ca6682161e9" />
+
+click and that's it!
+
+
+
+
+
+
+
+
+
+
 GET /tasks endpoint
 <img width="1127" height="650" alt="Screenshot 2026-09-14 162122" src="https://github.com/user-attachments/assets/b2874e5d-a576-4241-b763-28da8636b922" />
 <img width="1093" height="229" alt="Screenshot 2026-09-14 162130" src="https://github.com/user-attachments/assets/8cd70566-2c1f-4479-bf9f-e84f03a8caf8" />
