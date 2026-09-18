@@ -42,3 +42,46 @@ PUT /tasks/{task_id} end point, added a title for my task : blaaaaaaaaaaaaa
 
 DELETE /tasks/{task_id} end point, delete the task with id = 1
 <img width="640" height="762" alt="Screenshot 2026-09-14 161018" src="https://github.com/user-attachments/assets/22a8a591-05d4-4c2b-81c6-601914f219a3" />
+
+
+
+We chose SQLite for this assignment because it provides the ideal balance of simplicity, efficiency, and zero-configuration setup for local backend development with FastAPI.
+
+the database file "tasks.db" is stored in Assignment_2
+
+how to start the project?
+write these two commands in terminal
+cd Assignment_2
+uv run fastapi dev
+
+<img width="638" height="761" alt="Screenshot 2026-09-18 162539" src="https://github.com/user-attachments/assets/9cf1e703-08c8-449c-bea9-2ae03467f701" />
+
+
+ example SQL query I have executed
+<img width="1070" height="761" alt="Screenshot 2026-09-18 161555" src="https://github.com/user-attachments/assets/a24ecd1d-8e8c-4716-8f81-41b69b2e917b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
