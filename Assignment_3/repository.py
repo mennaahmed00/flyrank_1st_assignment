@@ -10,8 +10,19 @@ def get_connection():
     return psycopg.connect(DATABASE_URL)
 
 def init_db():
-    conn = get_connection()
+    conn = None
+    retries = 5
+    while retries > 0:
 
+        try:
+            conn = get_connection()
+            break
+        except psycopg.OperationlError:
+            retries -= 1
+            print("Database not ready yet. Retrying in 2 seconds...")
+            time.sleep(2)
+    if conn is None:
+        raise Exception("Could not connect to PostgreSQL after multiple retries.")
     try:
         cur = conn.cursor()
         cur.execute("""
