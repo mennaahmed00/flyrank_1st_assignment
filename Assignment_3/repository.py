@@ -37,3 +37,43 @@ def init_db():
     finally:
         # Always close connection when finished
         conn.close()
+
+
+def get_all_tasks():
+    conn = get_connection()
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT id, title, done FROM tasks ORDER BY id ASC;")
+        rows = cur.fetchall()
+        cur.close()
+
+        tasks = []
+        for row in rows:
+            tasks.append({
+                "id": row[0],
+                "title": row[1],
+                "done": row[2]
+            })
+        return tasks
+    finally:
+        conn.close()
+
+        
+def get_task_by_id(task_id: int):
+    conn = get_connection()
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT id, title, done FROM tasks WHERE id = %s;", (task_id,))
+        row = cur.fetchone()
+        cur.close()
+
+        if row is None:
+            return None
+
+        return{
+            "id": row[0],
+            "title": row[1],
+            "done": row[2]
+            }
+    finally:
+        conn.close()
