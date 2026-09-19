@@ -1,5 +1,7 @@
 import os
 import psycopg
+import time
+
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL", 
@@ -17,7 +19,8 @@ def init_db():
         try:
             conn = get_connection()
             break
-        except psycopg.OperationlError:
+        except psycopg.OperationalError:
+
             retries -= 1
             print("Database not ready yet. Retrying in 2 seconds...")
             time.sleep(2)
