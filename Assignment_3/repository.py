@@ -77,3 +77,54 @@ def get_task_by_id(task_id: int):
             }
     finally:
         conn.close()
+
+def create_task(title:str,done: bool = False):
+    conn = get_connection()
+    try:
+        cur = conn.cursor()
+        cur.execute("INSERT INTO tasks (title, done) VALUES (%s, %s) Returning id,title,done;",(title,done))
+        row = cur.fetchone()
+        conn.commit()
+        cur.close()
+
+        return{
+            "id": row[0],
+            "title": row[1],
+            "done": row[2]
+        }
+    finally:
+        conn.close()
+
+def update_task(task_id: int, title: str,done: bool):
+    conn = get_connection()
+    try:
+        cur = conn.cursor()
+        cur.execute("UPDATE tasks SET title = %s, done = %s WHERE id = %s RETURNING id, title, done;", (title, done, task_id)) 
+        row = cur.fetchone()
+        conn.commit()
+        cur.close()
+
+        if row is None:
+            return None
+
+        return{
+            "id":row[0],
+            "title": row[1],
+            "done":row[2]
+        }
+    
+    finally:
+        conn.close()
+
+def delete_task(task_id: int):
+    conn = get_connection()
+    try:
+        cur = conn.cursor()
+        cur.execute("DELETE FROM tasks WHERE id = %s RETURNING id;",(task_id,)) 
+        row = cur.fetchone()
+        conn.commit()
+        cur.close()
+
+        return row is not None
+    finally:
+        conn.close()
